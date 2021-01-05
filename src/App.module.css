@@ -1,0 +1,136 @@
+.box{
+
+    border: 5px solid;
+    border-color: darkblue;
+    border-radius: 8px;
+
+    box-sizing: border-box;
+    width: fit-content;
+    height: fit-content;
+
+    background-color: snow;
+
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.display{
+
+    width: 400px;
+    border: 0.5px solid;
+    border-color: black;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin-bottom: 10px;
+
+}
+.funcs{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+
+
+.history{
+    width: 200px;
+    border: 0.5px solid;
+    border-color: black;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+.opButtons{
+    height: 30px;
+    width: 60px;
+    border: none;
+    background-color:darkblue;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.opButtons:hover{
+    background-color:rgba(0, 0, 139,0.6);
+
+}
+
+
+.divButtons{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.numBox{
+    height: 100px;
+    width: 100%;
+    border-top: 0.2px solid black;
+    border-left: 0.2px solid black;
+    padding: 2px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: darkblue;
+    font-weight: bold;
+}
+button.numBox{
+    cursor: pointer;
+    background: snow;
+    border-bottom: 0;
+    border-right: 0;
+    transition: 0.5s;
+}
+button.numBox:hover{
+    background-color:rgba(0, 0, 139,0.9);
+    color: white;
+}
+.divButtons :nth-child(4){
+    border-right: 0.2px solid black;
+}
+.divButtons :nth-child(8){
+    border-right: 0.2px solid black;
+}
+.divButtons :nth-child(n+5):nth-child(-n+8){
+
+    border-bottom: 0.2px solid black;
+    margin-top: 0;
+
+}
+
+.input{
+    
+    
+    border: 2px solid;
+    text-align: center;
+    align-items: center;
+    padding: 0 15px;
+    height: 40px;
+    width: 400px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
