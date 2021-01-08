@@ -49,17 +49,34 @@
 
 
 .history{
-    width: 200px;
+    width: fit-content;
+    min-width: 200px;
+    max-width: 500px;
+    height: 365px;
     border: 0.5px solid;
     border-color: black;
     margin: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     box-sizing: border-box;
     border-radius: 8px;
+    overflow: auto;
+    padding: 10px;
 }
+
+.historyItem{
+    
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7px;
+    width: max-content;
+    
+}
+
+.line{
+    border-bottom: 3px solid darkblue;
+}
+
 .opButtons{
     height: 30px;
     width: 60px;

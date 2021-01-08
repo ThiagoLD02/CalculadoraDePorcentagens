@@ -1,0 +1,44 @@
+.inputBox{
+    background-color: snow;
+    text-align: center;
+    align-items: center;
+    height: fit-content;
+    width: fit-content;
+    box-sizing: border-box;
+    border: 5px solid darkblue;
+
+}
+.inputBox h1{
+    padding-top: 21px;
+}
+.inputButtons{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding: 10px;
+}
+.input{
+    margin: 5px;
+    border: 2px solid darkblue;
+    height: 40px;
+    text-align: center;
+}
+
+.submitInput{
+    
+    height: 50px;
+    width: 100px;
+    
+    border-radius: 50%;
+    border: 3px solid black;
+    
+    color: white;
+    background-color: darkgreen;
+    
+    margin: 20px 0px;
+    cursor: pointer;
+    transition: 500ms;
+    
+}
+.submitInput:hover{
+    background-color: rgba(0, 100, 0,0.8);
+}
