@@ -11,6 +11,11 @@ npm start
 
 ## Telas
 
-<img alt="inputs"  scr="pngs/input.png" >
-<br/>
-<img alt="calculadora"  scr="pngs/exemploCalculos.png" >
+## Inputs
+<!-- <img alt="inputs"  scr="input.png" > -->
+![inputs](./pngs/input.png)
+## Calculadora
+![calculadora](./pngs/exemploCalculos.png)
+
+
+
