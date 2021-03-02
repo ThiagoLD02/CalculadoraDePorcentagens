@@ -1,41 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {Formik,Form,Field} from 'formik';
 import styles from './styles.module.css';
-import Calculator from '../Calculator';
 
-function Inputs(){
-  
-  const [showInput,setShowInput] = useState(true);
-  const [values,setValues] = useState([0]);
+interface Parameters{
+  setShowInput: React.Dispatch<React.SetStateAction<boolean>>;
+  setValues: React.Dispatch<React.SetStateAction<Number[]>>
+}
+interface submit {
+  input1:number,
+  input2:number,
+  input3:number,
+  input4:number,
+  input5:number,
+  input6:number,
+  input7:number,
+  input8:number,
+}
+
+function Inputs(props:Parameters){
 
   function handleSubmit(vals:submit){
+    
+    const inputs = [
+      vals.input1,vals.input2,vals.input3,vals.input4,
+      vals.input5,vals.input6,vals.input7,vals.input8
+    ]
+    props.setValues(inputs);
+    props.setShowInput(false);
 
-    values.pop();
-    values.push(vals.input1);
-    values.push(vals.input2);
-    values.push(vals.input3);
-    values.push(vals.input4);
-    values.push(vals.input5);
-    values.push(vals.input6);
-    values.push(vals.input7);
-    values.push(vals.input8);
-    setShowInput(false);
   }
-
-
-
-  interface submit {
-    input1:number,
-    input2:number,
-    input3:number,
-    input4:number,
-    input5:number,
-    input6:number,
-    input7:number,
-    input8:number,
-  }
-
-
+  
 
   const initialVal = {
     input1:1,
@@ -48,8 +42,9 @@ function Inputs(){
     input8:8,
   };
 
-  const inputs = 
-    <div className={styles.inputBox}>
+  return(
+    <div>
+      <div className={styles.inputBox}>
         <h1>Por favor, entre com os valores: </h1>
         <div className={styles.inputButtons}>
           <Formik initialValues={initialVal} onSubmit={handleSubmit}>
@@ -66,20 +61,12 @@ function Inputs(){
               </div>
               <button type="submit" className={styles.submitInput} >Enviar </button>
             </Form> 
-            
           </Formik> 
         </div>
-    </div>
-
-
-  return(
-    <div>
-      
-      { showInput ? inputs: <Calculator  num = {values} />   }
-
+      </div>
     </div>
     
-  )
+  );
 }
 
 

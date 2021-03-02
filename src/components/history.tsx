@@ -1,4 +1,4 @@
-import styles from './App.module.css';
+import styles from '../App.module.css';
 interface type{
     percentage : number,
     money: number,

@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import styles from './styles.module.css';
 
-//const num = [0.79,0.82,0.84,0.86,0.87,0.89,0.90,0.99];
+interface Parameters{
+  setShowInput: React.Dispatch<React.SetStateAction<boolean>>;
+  num: any
+}
 
-function Calculator(numbers:any) {
+function Calculator(params:Parameters) {
   
-  const { num } = numbers;
+  const  num  = params.num;
 
   const [percentage,setPercentage] = useState<number>(0); // Percentage values
   const [money,setMoney] = useState<number>(0); // Results of the mathematical operation
   const [value,setValue] = useState<number>(0); // Input value
   const [oldValue,setOldValue] = useState<number>(0); // Input value
   const [history,setHistory] = useState<any>([]);
+  const [keys,setKeys] = useState(0);
   
   
   
@@ -21,7 +25,14 @@ function Calculator(numbers:any) {
     setOldValue(val);
   }
 
-  function erase() { setPercentage(0);  setMoney(0); setValue(0); setOldValue(0); }
+  function erase() { 
+    setPercentage(0);  setMoney(0); setValue(0); setOldValue(0);
+    const aba = Array.from(document.querySelectorAll('input')); 
+    aba.map( item => { 
+      item.value = ""
+      return item;
+    })
+  }
 
   function calc(percentageParam:number){ // Calculates the operation result & calls updateHistory
     
@@ -41,9 +52,10 @@ function Calculator(numbers:any) {
   }
 
   function updateHistory(perctg:number,mney:number){ // Adds a new block with the last operation
+    setKeys(keys+1);
     history.push(
-      <div id="Items" className = {styles.historyItem}>
-        {oldValue}+{perctg}% = {mney}
+      <div id="Items" key={keys} className = {styles.historyItem}>
+        {value}+{perctg}% = {mney}
         <hr className={styles.line}></hr>
       </div>
       
@@ -61,6 +73,10 @@ function Calculator(numbers:any) {
    
   }
 
+  function changeValues(){
+    params.setShowInput(true);
+  }
+
   return (
    
     <div className={styles.box}>
@@ -73,6 +89,9 @@ function Calculator(numbers:any) {
         <div className={styles.funcs}>
           <div>
               <button className={styles.opButtons} onClick={erase}>C</button> 
+          </div>
+          <div>
+              <button className={styles.opButtons} onClick={changeValues}>Trocar valores</button> 
           </div>
           <div>
               <button className={styles.opButtons} onClick={clear}>Apagar</button> 

@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import Inputs from './Inputs';
-// import Calculator from './Calculator';
+import Inputs from './components/Inputs';
+import Calculator from './components/Calculator';
+
 function App(){
-  
+
+  const [showInput,setShowInput] = useState(true);
+  const [values,setValues] = useState<Number[]>([]);
+
   return(
-    <Inputs></Inputs>
+    showInput ? <Inputs setShowInput={setShowInput} setValues={setValues} /> 
+              : <Calculator num={values} setShowInput={setShowInput}/>
   )
 }
 

@@ -1,14 +1,16 @@
+## Instalar dependências
 
+```
+npm install
+```
 
+## Rodar a aplicação
+```
+npm start
+```
 
+## Telas
 
-
-
-
-
-
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<img alt="inputs"  scr="pngs/input.png" >
+<br/>
+<img alt="calculadora"  scr="pngs/exemploCalculos.png" >
